@@ -4,7 +4,7 @@
 
 Júlia Bughi Corrêa da Costa, a103993
 
-## Sobre o TPC1
+## Sobre o TPC2
 
 Neste TPC foi proposta a criação de um serviço em nodejs que consuma a API de dados servida pelo json-server para uma escola de música, com as seguintes características:
 
