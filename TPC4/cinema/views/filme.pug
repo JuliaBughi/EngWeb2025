@@ -1,0 +1,39 @@
+extends layout 
+
+block content
+  .w3-card-4
+    header.w3-container.w3-red
+      h2 Editar Filme: "#{filme.titulo}"
+
+    form.w3-container(method="POST" action='/filmes/edit/' + filme.id)
+      fieldset
+        legend 
+            b Informações do Filme
+        label 
+            b Id
+        input.w3-input.w3-round(type="text" name="id" value=filme.id readonly)
+        label 
+            b Título
+        input.w3-input.w3-round(type="text" name="titulo" value=filme.titulo required)
+        label 
+            b Ano
+        input.w3-input.w3-round(type="number" name="ano" value=filme.ano required)
+      
+        - var atores = filme.atores || []
+        
+        label 
+            b Atores 
+            | (separados por vírgula)
+        input.w3-input.w3-round(type="text" name="atores" value=atores.join(", "))
+
+        - var generos = filme.genero || []
+        - var generoStr = generos.join(", ")
+        
+        label 
+            b Gêneros 
+            | (separados por vírgula)
+        input.w3-input.w3-round(type="text" name="genero" value=generoStr)
+      
+      br
+      button.w3-button.w3-red.w3-round-large(type="submit") Salvar
+      a.w3-button.w3-black.w3-round-large.w3-margin-left(href="/filmes") Voltar

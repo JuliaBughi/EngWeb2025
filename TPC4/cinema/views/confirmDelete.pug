@@ -1,0 +1,35 @@
+extends layout
+
+block content
+  .w3-container.w3-red
+    h2 Confirmar Eliminação de Filme: #{filme.titulo}
+  .w3-card-4.w3-margin
+    .w3-container
+      p Tem certeza que deseja eliminar o seguinte filme?
+      table.w3-table-all
+        tr
+            th ID
+            td #{filme.id}
+        tr
+            th Nome
+            td #{filme.titulo}
+        tr
+            th Ano
+            td #{filme.ano}
+        tr
+            th Atores
+            td
+              ul.w3-ul
+                each ator in filme.atores
+                  li= ator
+        tr  
+            th Géneros
+            td
+              ul.w3-ul
+                each genre in filme.genero
+                  li= genre
+    .w3-padding-16.w3-center
+        form(method="POST", action="/filmes/delete/" + filme.id)
+            button.w3-btn.w3-red(type="submit") Confirmar Eliminação
+            a.w3-btn.w3-red.w3-margin-left(href="/filmes") Cancelar
+            
