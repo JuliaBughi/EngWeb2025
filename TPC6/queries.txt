@@ -1,0 +1,3 @@
+no # 
+
+jq 'map(.idcontrato as $id | del(.idcontrato) | ._id = $id)' resultado.json > out.json

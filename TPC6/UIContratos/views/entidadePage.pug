@@ -1,0 +1,40 @@
+extends layout 
+
+block content 
+    .w3-card-4 
+    header.w3-container.w3-blue
+      h1 
+
+        - var entidade = contratos.length > 0 ? contratos[0].entidade_comunicante : "Desconhecida";
+
+        span Informação Detalhada da Entidade: #{entidade}
+
+    .w3-container
+
+        - var nipc = contratos.length > 0 ? contratos[0].NIPC_entidade_comunicante : "Desconhecido";
+
+        .w3-container
+            h3 NIPC: #{nipc}
+
+        table.w3-table-all
+            tr 
+                th ID do Contrato
+                th Objecto do Contrato
+                th Data de Celebração do Contrato
+                th Preço Contratual
+
+            - var total = 0
+
+            each contrato in contratos 
+
+                - total += contrato.precoContratual
+
+                tr 
+                    td= contrato._id 
+                    td= contrato.objectoContrato
+                    td= contrato.dataCelebracaoContrato
+                    td= contrato.precoContratual
+
+    .w3-container 
+        p Total: #{total.toFixed(2)}
+        a.w3-btn.w3-black(href="/") Voltar      

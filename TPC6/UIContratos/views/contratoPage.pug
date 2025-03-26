@@ -1,0 +1,75 @@
+extends layout 
+
+block content 
+    .w3-card-4 
+    header.w3-container.w3-blue
+      h1 
+        span Informação Detalhada do Contrato nº: #{contrato._id}
+
+    .w3-container
+      table.w3-table-all
+        tr
+          th Campo
+          th Valor
+
+        tr 
+          td 
+            b ID do Contrato 
+          td= contrato._id
+
+        tr 
+          td 
+            b Número do Anúncio 
+          td= contrato.nAnuncio
+
+        tr 
+          td 
+            b Tipo de Procedimento
+          td= contrato.tipoprocedimento
+
+        tr 
+          td 
+            b Objecto do Contrato
+          td= contrato.objectoContrato
+
+        tr 
+          td 
+            b Data da Publicação
+          td= contrato.dataPublicacao
+        
+        tr 
+          td 
+            b Data da Celebração do Contrato 
+          td= contrato.dataCelebracaoContrato
+
+        tr 
+          td 
+            b Preço Contratual 
+          td= contrato.precoContratual
+
+        tr 
+          td 
+            b Prazo de Execução
+          td= contrato.prazoExecucao
+
+        tr 
+          td 
+            b NIPC da Entidade Comunicante
+          td= contrato.NIPC_entidade_comunicante
+
+        tr 
+          td 
+            b Entidade Comunicante
+          td= contrato.entidade_comunicante
+
+        tr 
+          td
+            b Fundamentação
+          td= contrato.fundamentacao
+
+    .w3-container 
+      a.w3-btn.w3-black(href="/") Voltar
+
+        
+    
+    
