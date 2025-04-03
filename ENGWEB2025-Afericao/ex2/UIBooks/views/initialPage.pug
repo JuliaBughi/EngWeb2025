@@ -1,0 +1,34 @@
+extends layout
+
+block content
+  .w3-card-4 
+    header.w3-container.w3-teal 
+      h1 Biblioteca de livros 
+
+  .w3-container 
+    table.w3-table-all 
+      tr 
+        th ID 
+        th Título 
+        th Autor
+        th Data de Publicação 
+        th Número de Páginas
+
+      each book in books 
+        tr 
+          td 
+            a(href='/' + book._id)= book._id 
+          td= book.title 
+          td
+            each author in book.author 
+              p 
+                a(href='/entidades/' + author)= author 
+          td= book.publishDate 
+          td= book.pages
+
+  footer.w3-container.w3-teal
+    address 
+      span Gerado por EngWeb2025.
+
+
+  

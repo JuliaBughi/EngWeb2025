@@ -1,0 +1,35 @@
+extends layout 
+
+block content
+    .w3-card-4 
+        header.w3-container.w3-pale-red
+            h1= idAutor
+
+    .w3-container 
+        table.w3-table-all 
+            tr 
+                th ID 
+                th Título 
+                th Autor
+                th Data de Publicação 
+                th Número de Páginas
+
+            each book in books 
+                tr 
+                    td 
+                        a(href='/' + book._id)= book._id 
+                    td= book.title 
+                    td
+                        each author in book.author 
+                            p= author 
+                    td= book.publishDate 
+                    td= book.pages
+
+        p Total de livros: #{books.length}
+
+    .w3-container 
+      a.w3-btn.w3-black(href="/") Voltar
+
+    footer.w3-container.w3-pale-red
+        address 
+            span Gerado por EngWeb2025.

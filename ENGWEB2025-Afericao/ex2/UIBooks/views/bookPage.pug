@@ -1,0 +1,154 @@
+extends layout
+
+block content 
+    .w3-card-4 
+    header.w3-container.w3-pale-red
+        h1= book.title
+
+    .w3-container 
+        img(src=book.coverImg, alt='Capa do Livro')
+
+    .w3-container    
+        table.w3-table-all 
+            tr 
+                th Campo 
+                th Valor
+
+            tr 
+                td 
+                    b ID do Livro 
+                td= book._id
+
+            tr 
+                td 
+                    b Título
+                td= book.title
+
+            tr 
+                td 
+                    b Série
+                td= book.series
+
+            tr 
+                td 
+                    b Autores
+                td
+                    each author in book.author 
+                        p= author
+
+            tr 
+                td 
+                    b Rating
+                td= book.rating
+            
+            tr 
+                td 
+                    b Descrição
+                td= book.description
+
+            tr 
+                td 
+                    b Língua
+                td= book.language
+
+            tr 
+                td 
+                    b ISBN
+                td= book.isbn
+
+            tr 
+                td 
+                    b Género
+                td
+                    each genre in book.genres 
+                        p= genre
+
+            tr 
+                td 
+                    b Personagens
+                td 
+                    each char in book.characters 
+                        p= char
+
+            tr 
+                td 
+                    b Formato do livro
+                td= book.bookFormat    
+            
+            tr 
+                td 
+                    b Edição
+                td= book.edition
+
+            tr 
+                td 
+                    b Número de Páginas
+                td= book.pages
+
+            tr 
+                td 
+                    b Editora
+                td= book.publisher
+
+            tr 
+                td 
+                    b Data de Publicação
+                td= book.publishDate    
+            
+            tr 
+                td 
+                    b Primeira Data de Publicação
+                td= book.edition
+
+            tr 
+                td 
+                    b Prémios
+                td
+                    each award in book.awards 
+                        p= award
+
+            tr 
+                td 
+                    b Número de Avaliações
+                td= book.numRatings
+
+            tr 
+                td 
+                    b Avaliações por Estrelas
+                td
+                    each rating in book.ratingsByStars 
+                        p= rating
+
+            tr 
+                td 
+                    b Percentual de Curtidas
+                td= book.likedPercent
+
+            tr 
+                td 
+                    b Configuração
+                td
+                    each setting in book.setting 
+                        p= setting
+
+            tr 
+                td 
+                    b BBE Score
+                td= book.bbeScore
+
+            tr 
+                td 
+                    b Votos BBE
+                td= book.bbeVotes
+
+            tr 
+                td 
+                    b Preço
+                td= book.price
+    
+    .w3-container 
+      a.w3-btn.w3-black(href="/") Voltar
+ 
+    footer.w3-container.w3-pale-red
+      address 
+        span Gerado por EngWeb2025.
